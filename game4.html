@@ -1,26 +1,28 @@
 <html>
+
 <head>
     <style>
-        .a {
-        
-        }
+        .a {}
 
         img {
-            width: 25px;px;
-            height: 25px;px;
+            width: 25px;
+            px;
+            height: 25px;
+            px;
         }
     </style>
 </head>
+
 <body>
     <div style="width: 500px; height: 500px; border:2px solid black"></div>
-        <img src="ball.jpg"  class="a" >
+    <img src="ball.jpg" class="a">
     </div>
     <div class='score'></div>
 </body>
 <script>
     ball = document.querySelector('.a');
-    ball.style.position='absolute';
-    ball.style.top='0px';
+    ball.style.position = 'absolute';
+    ball.style.top = '0px';
     var pos = 0;
     id = setInterval(b, 50);
     function b() {
@@ -29,19 +31,20 @@
         }
         else {
             pos++;
-            ball.style.top= pos + 'px';
+            ball.style.top = pos + 'px';
         }
     }
-    var randomLeft = getRandomNumber(0,500);
-            ball.style.left = randomLeft + 'px';
-            function getRandomNumber(min,max) {
-                return Math.round(Math.random() * (max-min) + min);
-            }
-            function addscore() {
-                var score = 0;
-                var k = document.querySelector('.score');
-                score++;
-                document.appendChild('score');
-            }
+    var score = 0;
+    var randomLeft = getRandomNumber(0, 500);
+    ball.style.left = randomLeft + 'px';
+    function getRandomNumber(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+    function addscore() {
+        var k = document.querySelector('.score');
+        score++;
+        k.innerHTML = score;
+    }
 </script>
+
 </html>
